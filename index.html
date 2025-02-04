@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Квіз про імплантацію зубів</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <button class="quiz__open" id="quizOpen">Запустити квіз</button>
+    <div class="quiz__overlay" id="quizOverlay">
+        <div class="quiz__container">
+            <div class="quiz__container-header">
+                <p>Пройдіть коротеньке опитування, <br>
+                    яке дозволить нам краще підготувати програму для вас</p>
+                <button class="quiz__close" id="quizClose">
+                    <img width="32" height="32" src="img/close.svg" alt="close button">
+                </button>
+            </div>
+            <div class="quiz__progress-indicator">
+                <div class="quiz__progress-dots">
+                    <div class="quiz__dot quiz__dot--active"></div>
+                    <div class="quiz__dot"></div>
+                    <div class="quiz__dot"></div>
+                    <div class="quiz__dot"></div>
+                    <img src="img/gift.svg" class="quiz__gift-icon" alt="Gift">
+                </div>
+                <div class="quiz__progress-steps">
+                    <p>Питання:</p>
+                    <span class="quiz__step-counter">1 з 4</span>
+                </div>
+            </div>
+            <form id="quizForm">
+                <div class="quiz__content">
+                    <div class="quiz__step quiz__step--active" data-step="1">
+                        <h2>Ви шукаєте імплантацію зуба?</h2>
+                        <div class="quiz__options quiz__options1">
+                            <label class="quiz__option">
+                                <div class="quiz__option-img">
+                                    <picture>
+                                        <source srcset="img/quiz-img1.webp" type="image/webp">
+                                        <img class="hero__img" width="420" height="232" src="img/quiz-img1.png"
+                                            alt="image">
+                                    </picture>
+                                </div>
+                                <input type="radio" name="implant" value="yes">
+                                Так
+                            </label>
+                            <label class="quiz__option">
+                                <div class="quiz__option-img">
+                                    <picture>
+                                        <source srcset="img/quiz-img2.webp" type="image/webp">
+                                        <img class="hero__img" width="420" height="232" src="img/quiz-img2.png"
+                                            alt="image">
+                                    </picture>
+                                </div>
+                                <input type="radio" name="implant" value="no">
+                                Ні
+                            </label>
+                        </div>
+                    </div>
+                    <div class="quiz__step" data-step="2">
+                        <h2>Ви шукаєте імплантацію зуба?</h2>
+                        <div class="quiz__options quiz__options2">
+                            <label class="quiz__option quiz__option1">
+                                <img width="100" height="100" src="img/quiz-step-yes.svg" alt="icon">
+                                <input type="radio" name="interest" value="yes">
+                                Так
+                            </label>
+                            <label class="quiz__option quiz__option2">
+                                <img width="100" height="100" src="img/quiz-step-no.svg" alt="icon">
+                                <input type="radio" name="interest" value="no">
+                                Ні
+                            </label>
+                        </div>
+                    </div>
+                    <div class="quiz__step" data-step="3">
+                        <h2>Ви шукаєте імплантацію зуба?</h2>
+                        <div class="quiz__options quiz__options3">
+                            <label class="quiz__option quiz__option-day1">
+                                <img width="100" height="100" src="img/step3-img1.svg" alt="icon">
+                                <input type="radio" name="time" value="1_month">
+                                1 місяць
+                            </label>
+                            <label class="quiz__option quiz__option-day2">
+                                <img width="100" height="100" src="img/step3-img2.svg" alt="icon">
+                                <input type="radio" name="time" value="3_months">
+                                Більше 3х місяців
+                            </label>
+                            <label class="quiz__option quiz__option-day3">
+                                <img width="100" height="100" src="img/step3-img3.svg" alt="icon">
+                                <input type="radio" name="time" value="6_months">
+                                Півроку і довше
+                            </label>
+                        </div>
+                    </div>
+                    <div class="quiz__step quiz__step-form" data-step="4">
+                        <div class="quiz__step-left">
+                            <span>крок 1</span>
+                            <h2>Оберіть подарунок</h2>
+                            <div class="quiz__options">
+                                <label class="quiz__option">
+                                    <img width="76" height="87" src="img/gift.svg" alt="icon">
+                                    <input type="radio" name="gift" value="gift1">
+                                    Подарунок 1
+                                    <p>Ви зощаджуєте до 2000 грн</p>
+                                </label>
+
+                                <strong>або</strong>
+
+                                <label class="quiz__option">
+                                    <img width="76" height="87" src="img/gift.svg" alt="icon">
+                                    <input type="radio" name="gift" value="gift2">
+                                    Подарунок 2
+                                    <p>Ви зощаджуєте до 2500 грн</p>
+                                </label>
+                            </div>
+                        </div>
+                        
+                       <div class="quiz__step-right">
+                        <span>крок 2</span>
+                        <h2>Введіть ваші дані,
+                            щоб отримати подарунок від нас </h2>
+                            <div class="quiz__step-box">
+                                <input type="text" name="name" placeholder="Як до вас звертатися?" required>
+                                <input type="email" name="email" placeholder="Введіть ваш мейл" required>
+                                <input type="tel" name="phone" placeholder="Введіть номер телефону" required>
+                                <button type="submit" class="quiz__btn">Отримати подарунок</button>
+                            </div>
+                       </div>
+                    </div>
+                </div>
+            </form>
+            <div class="quiz__navigation">
+                <button class="quiz__btn quiz__btn--prev" disabled>
+                    <img width="25" height="25" src="img/arrow-prev.svg" alt="prev">
+                    Назад
+                </button>
+                <button class="quiz__btn quiz__btn--next" disabled>Далі 
+                    <img width="25" height="25" src="img/aroow-white.svg" alt="next">
+                </button>
+            </div>
+        </div>
+    </div>
+    
+  
+    
+   <script src="script.js"></script>  
+</body>
+</html>
