@@ -48,6 +48,10 @@ body {
     max-width: 1170px;
     width: 100%;
     margin: 0 auto;
+    height: 100%;
+    overflow: auto;
+    padding-top: 120px;
+    box-sizing: border-box;
 }
 
 .quiz__container-header {
@@ -137,7 +141,7 @@ body {
     display: flex;
     gap: 30px;
     align-items: center;
-    margin: 0 auto 57px auto;
+    margin: 0 auto;
 }
 
 .quiz__options1 input {
@@ -216,21 +220,16 @@ body {
 }
 
 .quiz__step {
-    position: absolute;
-    left: 1000%;
-    max-width: 1170px;
-    width: 100%;
+    height: 100%;
+    display: none;
+    opacity: 0;
     transition: all 0.6s;
 }
 
-.quiz__content {
-    position: relative;
-    height: 445px;
-}
 
 .quiz__step--active {
     display: block;
-    left: 0;
+    opacity: 1;
 }
 
 .quiz__btn--next {
@@ -362,16 +361,16 @@ body {
     gap: 30px;
     align-items: center;
     justify-content: space-between;
-    margin: 0 auto 57px auto;
+    margin: 0 auto;
 }
 
 .quiz__options3 .quiz__option {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     gap: 25px;
-    height: 284px;
+    min-height: 284px;
+    justify-content: center;
     cursor: pointer;
 }
 
@@ -393,6 +392,42 @@ body {
 
 .quiz__option-day3.quiz__option--selected img {
     content: url(img/quiz-img3-green.svg);
+}
+
+.quiz__options3.quiz__options4 .quiz__option-date1.quiz__option--selected img {
+    content: url(img/implant-green1.svg);
+}
+
+.quiz__options3.quiz__options4 .quiz__option-date2.quiz__option--selected img {
+    content: url(img/implant-green2.svg);
+}
+
+.quiz__options3.quiz__options4 .quiz__option-date3.quiz__option--selected img {
+    content: url(img/implant-green3.svg);
+}
+
+.quiz__options3.quiz__options4 .quiz__option-date4.quiz__option--selected img {
+    content: url(img/implant-green4.svg);
+}
+
+.quiz__options-date .quiz__option-day1.quiz__option--selected img {
+    content: url(img/date-green1.svg);
+}
+
+.quiz__options-date .quiz__option-day2.quiz__option--selected img {
+    content: url(img/date-green2.svg);
+}
+
+.quiz__options-date .quiz__option-day3.quiz__option--selected img {
+    content: url(img/date-green3.svg);
+}
+
+.quiz__option {
+    text-align: center;
+    font-family: var(--main-font);
+    font-size: 21px;
+    font-weight: 500;
+    flex: 1;
 }
 
 .quiz__step-form.quiz__step--active {
@@ -421,6 +456,7 @@ body {
 .quiz__step-left {
     width: 50%;
     padding-right: 40px;
+    padding-left: 20px;
     box-sizing: border-box;
 }
 
@@ -461,15 +497,18 @@ body {
     font-weight: 600;
 }
 
+
 .quiz__step-left .quiz__option {
     width: 100%;
     height: 179px;
+    min-height: 179px;
     border-radius: 5px;
     background: #E5E1E1;
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     color: var(--gray-color);
     font-family: var(--main-font);
     font-size: 21px;
@@ -601,7 +640,7 @@ body {
 
 @media(max-width: 1200px) {
     .quiz__container {
-        padding: 0 16px;
+        padding: 64px 16px;
         box-sizing: border-box;
     }
 
@@ -634,15 +673,15 @@ body {
 
     .quiz__step-left .quiz__option img {
         left: 10px;
+        top: 0;
     }
 
     .quiz__step-left .quiz__option {
-        padding-left: 100px;
-        padding-right: 16px;
+        padding: 16px;
     }
 
     .quiz__step-left .quiz__option p {
-        max-width: 267px;
+        max-width: 100%;
         width: 100%;
         white-space: wrap;
         height: auto;
@@ -652,10 +691,6 @@ body {
 @media(max-width: 768px) {
     .quiz__options {
         flex-direction: column;
-    }
-    
-    .quiz__content {
-        height: 750px;
     }
 
     .quiz__options1 .quiz__option {
@@ -680,7 +715,6 @@ body {
         box-sizing: border-box;
         min-height: 1300px;
         height: 100%;
-        overflow: scroll;
     }
 
     .quiz__step-form.quiz__step--active {
@@ -722,20 +756,27 @@ body {
         max-width: 100%;
     }
 
-    .quiz__overlay.quiz__overlay--final {
-        min-height: 100vh;
-        height: 100%;
+    .quiz__options2 .quiz__option {
+        max-width: 420px;
+        width: 100%;
     }
 
-    .quiz__overlay {
-        min-height: 100vh;
-        height: 100%;
+    .quiz__options3 .quiz__option {
+        min-height: auto;
     }
 
-    .quiz__container {
-        height: 100%;
-        padding: 32px 16px;
-        overflow: auto;
-        min-height: 100%;
+    .quiz__options3 {
+        margin: 0 auto 32px auto;
     }
+
+    .quiz__overlay--final #quizForm {
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    .quiz__overlay--final #quizForm .quiz__content {
+        height: 100%;
+        overflow: scroll;
+    }
+
 }

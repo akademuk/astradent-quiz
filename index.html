@@ -24,6 +24,7 @@
                     <div class="quiz__dot"></div>
                     <div class="quiz__dot"></div>
                     <div class="quiz__dot"></div>
+                    <div class="quiz__dot"></div>
                     <img src="img/gift.svg" class="quiz__gift-icon" alt="Gift">
                 </div>
                 <div class="quiz__progress-steps">
@@ -34,33 +35,6 @@
             <form id="quizForm">
                 <div class="quiz__content">
                     <div class="quiz__step quiz__step--active" data-step="1">
-                        <h2>Ви шукаєте імплантацію зуба?</h2>
-                        <div class="quiz__options quiz__options1">
-                            <label class="quiz__option">
-                                <div class="quiz__option-img">
-                                    <picture>
-                                        <source srcset="img/quiz-img1.webp" type="image/webp">
-                                        <img class="hero__img" width="420" height="232" src="img/quiz-img1.png"
-                                            alt="image">
-                                    </picture>
-                                </div>
-                                <input type="radio" name="implant" value="yes">
-                                Так
-                            </label>
-                            <label class="quiz__option">
-                                <div class="quiz__option-img">
-                                    <picture>
-                                        <source srcset="img/quiz-img2.webp" type="image/webp">
-                                        <img class="hero__img" width="420" height="232" src="img/quiz-img2.png"
-                                            alt="image">
-                                    </picture>
-                                </div>
-                                <input type="radio" name="implant" value="no">
-                                Ні
-                            </label>
-                        </div>
-                    </div>
-                    <div class="quiz__step" data-step="2">
                         <h2>Ви шукаєте імплантацію зуба?</h2>
                         <div class="quiz__options quiz__options2">
                             <label class="quiz__option quiz__option1">
@@ -75,8 +49,8 @@
                             </label>
                         </div>
                     </div>
-                    <div class="quiz__step" data-step="3">
-                        <h2>Ви шукаєте імплантацію зуба?</h2>
+                    <div class="quiz__step" data-step="2">
+                        <h2>Як давно у вас відсутній зуб?</h2>
                         <div class="quiz__options quiz__options3">
                             <label class="quiz__option quiz__option-day1">
                                 <img width="100" height="100" src="img/step3-img1.svg" alt="icon">
@@ -95,7 +69,52 @@
                             </label>
                         </div>
                     </div>
-                    <div class="quiz__step quiz__step-form" data-step="4">
+                    <div class="quiz__step" data-step="3">
+                        <h2>Яка імплантація вас цікавить?</h2>
+                        <div class="quiz__options quiz__options3 quiz__options4">
+                            <label class="quiz__option quiz__option-date1">
+                                <img width="100" height="100" src="img/implant-blue1.svg" alt="icon">
+                                <input type="radio" name="time" value="1_implant">
+                                Встановлення 1 імпланту
+                            </label>
+                            <label class="quiz__option quiz__option-date2">
+                                <img width="100" height="100" src="img/implant-blue2.svg" alt="icon">
+                                <input type="radio" name="time" value="sistem_all4">
+                                Система Все на 4
+                            </label>
+                            <label class="quiz__option quiz__option-date3">
+                                <img width="100" height="100" src="img/implant-blue3.svg" alt="icon">
+                                <input type="radio" name="time" value="sistem_all6">
+                                Система Все на 6
+                            </label>
+                            <label class="quiz__option quiz__option-date4">
+                                <img width="100" height="100" src="img/implant-blue4.svg" alt="icon">
+                                <input type="radio" name="time" value="not_sistem">
+                                Не знаю
+                            </label>
+                        </div>
+                    </div>
+                    <div class="quiz__step" data-step="4">
+                        <h2>Коли приблизно плануєте пройти процедуру?</h2>
+                        <div class="quiz__options quiz__options3 quiz__options-date">
+                            <label class="quiz__option quiz__option-day1">
+                                <img width="100" height="100" src="img/date-blue1.svg" alt="icon">
+                                <input type="radio" name="time" value="date_1">
+                                Як умога швидше
+                            </label>
+                            <label class="quiz__option quiz__option-day2">
+                                <img width="100" height="100" src="img/date-blue2.svg" alt="icon">
+                                <input type="radio" name="time" value="date_2">
+                                Протягом місяця
+                            </label>
+                            <label class="quiz__option quiz__option-day3">
+                                <img width="100" height="100" src="img/date-blue3.svg" alt="icon">
+                                <input type="radio" name="time" value="date_3">
+                                Не знаю
+                            </label>
+                        </div>
+                    </div>
+                    <div class="quiz__step quiz__step-form" data-step="5">
                         <div class="quiz__step-left">
                             <span>крок 1</span>
                             <h2>Оберіть подарунок</h2>
@@ -133,11 +152,11 @@
                 </div>
             </form>
             <div class="quiz__navigation">
-                <button class="quiz__btn quiz__btn--prev" disabled>
+                <button class="quiz__btn quiz__btn--prev">
                     <img width="25" height="25" src="img/arrow-prev.svg" alt="prev">
                     Назад
                 </button>
-                <button class="quiz__btn quiz__btn--next" disabled>Далі 
+                <button class="quiz__btn quiz__btn--next">Далі 
                     <img width="25" height="25" src="img/aroow-white.svg" alt="next">
                 </button>
             </div>
@@ -145,7 +164,7 @@
     </div>
     
   
-    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
    <script src="script.js"></script>  
 </body>
 </html>
