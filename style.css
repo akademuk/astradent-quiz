@@ -92,6 +92,7 @@ body {
     background: transparent;
     padding: 0;
     border: none;
+    margin-left: auto;
     cursor: pointer;
 }
 
@@ -220,16 +221,40 @@ body {
 }
 
 .quiz__step {
+    display: flex;
     height: 100%;
-    display: none;
+    width: 100%; 
+    max-width: 100%; 
+    transition: opacity 0.5s , transform 0.6s , max-width 0.6s ;
+    overflow: hidden;
     opacity: 0;
-    transition: all 0.6s;
+    transform: translateX(100%); 
+    visibility: hidden; 
+}
+
+.quiz__step.quiz__step--active {
+    opacity: 1;
+    transform: translateX(0);
+    max-width: 100%;
+    visibility: visible;
+    min-width: 100%;
+    flex-direction: column;
+}
+
+.quiz__step-form {
+    height: 0;
+}
+
+.quiz__step.quiz__step--active.quiz__step-form {
+    height: auto;
+    flex-direction: row;
 }
 
 
-.quiz__step--active {
-    display: block;
-    opacity: 1;
+.quiz__content {
+    max-width: 100%;
+    overflow: hidden;
+    display: flex;
 }
 
 .quiz__btn--next {
@@ -437,11 +462,12 @@ body {
     display: flex;
 }
 
+
 .quiz__overlay.quiz__overlay--final {
     background: linear-gradient(to right, var(--primary-bg-disabled) 50%, #fff 50%);
 }
 
-.quiz__overlay.quiz__overlay--final .quiz__container-header {
+.quiz__overlay.quiz__overlay--final .quiz__container-header p{
     display: none;
 }
 
@@ -607,8 +633,9 @@ body {
     font-weight: 500;
     border: 1px solid transparent;
     border-radius: 5px;
-    background: var(--gray-color);
+    background: var(--main-color);
     transition: all 0.4s;
+    cursor: pointer;
 }
 
 .quiz__step-box .quiz__btn:hover {
@@ -717,8 +744,15 @@ body {
         height: 100%;
     }
 
-    .quiz__step-form.quiz__step--active {
+    .quiz__step.quiz__step--active.quiz__step-form {
         flex-direction: column;
+    }
+
+    .quiz__overlay.quiz__overlay--final .quiz__container-header {
+        background: var(--primary-bg-disabled);
+        margin: 0;
+        padding: 16px;
+        box-sizing: border-box;
     }
 
     .quiz__overlay.quiz__overlay--final .quiz__container {
@@ -780,3 +814,6 @@ body {
     }
 
 }
+
+
+
