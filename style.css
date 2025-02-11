@@ -222,7 +222,7 @@ body {
 
 .quiz__step {
     display: flex;
-    height: 100%;
+    height: 0;
     width: 100%; 
     max-width: 100%; 
     transition: opacity 0.5s , transform 0.6s , max-width 0.6s ;
@@ -236,6 +236,7 @@ body {
     opacity: 1;
     transform: translateX(0);
     max-width: 100%;
+    height: 100%;
     visibility: visible;
     min-width: 100%;
     flex-direction: column;
@@ -367,9 +368,7 @@ body {
     color: var(--main-color);
 }
 
-.quiz__option.quiz__option--selected img {
-    transition: all 0.4s;
-}
+
 
 .quiz__option1.quiz__option--selected img {
     content: url(img/quiz-step-yes1.svg);
@@ -813,6 +812,11 @@ body {
         overflow: scroll;
     }
 
+    .quiz__step.quiz__step--active.quiz__step-form {
+        overflow: auto;
+        display: block;
+        height: calc(100vh - 67px);
+    }
 }
 
 
